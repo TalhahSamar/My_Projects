@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <AnchorPane fx:id="Window_1" maxHeight="800.0" maxWidth="600.0" minHeight="800.0" minWidth="600.0" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" visible="false">
+            <children>
+                <ImageView fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" y="50.0">
+                    <image>
+                        <Image url="@../Images/LudoBoard.png" />
+                    </image>
+                </ImageView>
+                <Line endX="600.0" endY="42.0" startY="42.0" />
+                <Line endX="600.0" endY="650.0" layoutY="26.0" startY="650.0" />
+                <Button fx:id="CubeDice" layoutX="246.0" layoutY="685.0" mnemonicParsing="false" onAction="#Dice_Roll" onKeyPressed="#Dice_Roll" prefHeight="110.0" prefWidth="112.0" />
+                <Rectangle fx:id="Polygon_1" arcHeight="5.0" arcWidth="5.0" blendMode="ADD" disable="true" height="105.0" layoutX="246.0" layoutY="685.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="105.0" />
+                <Circle fx:id="P1T1" fill="WHITE" layoutX="122.0" layoutY="190.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Circle fx:id="P1T2" fill="WHITE" layoutX="199.0" layoutY="190.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Circle fx:id="P1T4" fill="WHITE" layoutX="200.0" layoutY="262.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Circle fx:id="P1T3" fill="WHITE" layoutX="124.0" layoutY="262.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Circle fx:id="P2T3" fill="WHITE" layoutX="402.0" layoutY="540.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Circle fx:id="P2T4" fill="WHITE" layoutX="477.0" layoutY="540.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Circle fx:id="P2T2" fill="WHITE" layoutX="477.0" layoutY="469.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Circle fx:id="P2T1" fill="WHITE" layoutX="402.0" layoutY="469.0" radius="11.0" strokeType="INSIDE" styleClass="TokenStyle" />
+                <Label fx:id="P1Label" layoutX="42.0" layoutY="72.0" maxHeight="50.0" maxWidth="249.0" minWidth="130.0" prefHeight="50.0" prefWidth="249.0" styleClass="Name_Labels" />
+                <Label fx:id="P2Label" layoutX="314.0" layoutY="585.0" maxHeight="50.0" maxWidth="249.0" minWidth="130.0" prefHeight="50.0" prefWidth="249.0" styleClass="Name_Labels" />
+                <Button id="GoBack" cancelButton="true" focusTraversable="false" layoutX="18.0" maxHeight="41.0" maxWidth="41.0" minHeight="41.0" minWidth="41.0" mnemonicParsing="false" onAction="#Back" prefHeight="41.0" prefWidth="41.0" />
+                <Button fx:id="Token_1" layoutX="77.0" layoutY="137.0" maxHeight="26.0" maxWidth="26.0" minHeight="26.0" minWidth="26.0" mnemonicParsing="false" onAction="#Click" prefHeight="26.0" prefWidth="26.0" styleClass="Token_Button" text="0" textAlignment="CENTER" visible="false" />
+                <Button fx:id="Token_2" layoutX="157.0" layoutY="137.0" maxHeight="26.0" maxWidth="26.0" minHeight="26.0" minWidth="26.0" mnemonicParsing="false" onAction="#Click" prefHeight="26.0" prefWidth="26.0" styleClass="Token_Button" text="1" textAlignment="CENTER" visible="false" />
+                <Button fx:id="Token_3" layoutX="77.0" layoutY="229.0" maxHeight="26.0" maxWidth="26.0" minHeight="26.0" minWidth="26.0" mnemonicParsing="false" onAction="#Click" prefHeight="26.0" prefWidth="26.0" styleClass="Token_Button" text="2" textAlignment="CENTER" visible="false" />
+                <Button fx:id="Token_4" layoutX="157.0" layoutY="229.0" maxHeight="26.0" maxWidth="26.0" minHeight="26.0" minWidth="26.0" mnemonicParsing="false" onAction="#Click" prefHeight="26.0" prefWidth="26.0" styleClass="Token_Button" text="3" textAlignment="CENTER" visible="false" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="Window_2" maxHeight="800.0" maxWidth="600.0" minHeight="800.0" minWidth="600.0" prefHeight="800.0" prefWidth="600.0">
+            <children>
+                <Label id="LabelStart" fx:id="LabelStart" layoutX="215.0" layoutY="150.0" prefHeight="30.0" prefWidth="200.0" text="2 PLAYERS REQUIRED!!" />
+                <Button fx:id="ToStart" defaultButton="true" layoutX="215.0" layoutY="150.0" mnemonicParsing="false" onAction="#Ludo_Start" prefHeight="50.0" prefWidth="200.0" text="START LUDO GAME" textFill="#656565">
+                    <effect>
+                        <DropShadow color="#67837c" height="41.76" offsetX="5.0" offsetY="5.0" radius="19.6375" spread="0.1" width="38.79" />
+                    </effect>
+                </Button>
+                <CheckBox fx:id="P1Check" layoutX="180.0" layoutY="300.0" mnemonicParsing="false" onAction="#Box" selected="true" styleClass="Box" text="Palyer 1" />
+                <TextField fx:id="P1Name" layoutX="320.0" layoutY="300.0" prefHeight="30.0" prefWidth="120.0" />
+                <CheckBox fx:id="P2Check" layoutX="180.0" layoutY="410.0" mnemonicParsing="false" onAction="#Box" selected="true" styleClass="Box" text="Palyer 2" />
+                <TextField fx:id="P2Name" layoutX="320.0" layoutY="410.0" prefHeight="30.0" prefWidth="120.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
